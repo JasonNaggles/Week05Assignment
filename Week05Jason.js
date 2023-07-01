@@ -25,4 +25,43 @@ class Food {
     }
 }
 
+class Menu {
+    constructor() {
+        this.food = [];
+        this.selectedFood = null;
+    }
+
+    start() {
+        let selection = this.showMeMenuOptions();
+        while (selection != 0) {
+        switch (selection) {
+            case '1':
+            this.createFood;
+            break;
+            case '2':
+            this.viewFood;
+            break;
+            case '3':
+            this.deleteFood;
+            break;
+            case '4':
+            this.displayFood;
+            break;
+            default:
+                selection = 0; 
+        }
+            selection = this.showMeMenuOptions();
+        }
+            alert('Come back to see us!');
+    }
+    showMeMenuOptions() {
+        return prompt(`
+        0) Exit
+        1) Select new food
+        2) View your food selection
+        3) Delete your food selection
+        4) Display all of your food selection
+        `)
+    };
+}
 
