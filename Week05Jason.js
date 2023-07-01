@@ -20,7 +20,9 @@ class Food {
             throw new Error(`You can only add an instance of Customer. Argument is not a customer: ${customer}`);
         }
     }
-
+    describe() {
+        return `${this.name} has these ${this.customers.length} customers.`;
+    }
 }
 
 
