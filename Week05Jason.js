@@ -3,4 +3,7 @@ class Customer {
         this.name = name;
         this.phoneNumber = phoneNumber;
     }
+    describe() {
+        return `${this.name} has this ${this.phoneNumber}.`;
+    }
 }
