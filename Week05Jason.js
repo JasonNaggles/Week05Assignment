@@ -56,14 +56,24 @@ class Menu {
     }
     showMeMenuOptions() {
         return prompt(`
-        0) Exit
         1) Select new food
         2) View your food selection
         3) Remove your food selection
         4) Display all of your food selection
+        5) Exit
         `);
     }
-
+    showFoodMenuOptions() {
+        return prompt(`
+        1) White Rice
+        2) Plain Fried Rice
+        3) Shrimp Fried Rice
+        4) Pork Fried Rice
+        5) Beef Fried Rice
+        6) Kung Pao Chicken
+        7) General Tso Chicken
+        `);
+    }
     displayAllYourFoodSelection() {
         let foodString = '';
         for (let i = 0; i < this.food.length; i++) {
