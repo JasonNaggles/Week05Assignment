@@ -61,8 +61,8 @@ class Menu {
         2) View your food selection
         3) Remove your food selection
         4) Display all of your food selection
-        `)
-    };
+        `);
+    }
 
     displayAllYourFoodSelection() {
         let foodString = '';
