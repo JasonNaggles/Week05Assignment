@@ -59,9 +59,53 @@ class Menu {
         0) Exit
         1) Select new food
         2) View your food selection
-        3) Delete your food selection
+        3) Remove your food selection
         4) Display all of your food selection
         `)
     };
+
+    displayAllYourFoodSelection() {
+        let foodString = '';
+        for (let i = 0; i < this.food.length; i++) {
+            foodString += i + ') ' + this.food[i].name + '\n';
+        }
+        alert(foodString);
+    }
+    createFood() {
+        let name = prompt('Enter name for new food:');
+        this.food.push(new Food(name));
+    }
+    viewFood() {
+        let index = prompt('Enter the index of the food you wish to view:');
+        if (index > -1 && index < this.food.length) {
+            this.selectedFood = this.food[index];
+            let description = 'Food Name: ' + this.selectedFood.name + '\n';
+
+            for (let i = 0; i < this.selectedFood.customers.length; i++) {
+                description += i + ') ' + this.selectedFood.customers[i].name + ' - ' + this.selectedFood.customers[i].phoneNumber + '\n';
+            }
+            let selection = this.showCustomersMenuOptions(description);
+            switch (selection) {
+                case '1':
+                this.createCustomer();
+                break;
+                case '2':
+                this.deleteCustomer();
+            }
+        }
+    
+    }
+    createCustomer() {
+        let name = prompt('Enter name for new customer:');
+        let phoneNumber = prompt('Enter telephone number of new customer:');
+        this.selectedFood.customers.push(new Customer(name, phoneNumber));
+
+    }
+    deleteCustomer() {
+        let index = prompt('Enter the index of the customer that you want to delete:');
+        if (index > -1 && index < this.selectedFood.customers.length) {
+            this.selectedFood.customers.splice(index, 1);
+        }
+    }
 }
 
