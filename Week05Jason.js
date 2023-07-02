@@ -1,5 +1,3 @@
-const prompt = require("prompt-sync")();
-
 class Customer {
     constructor(name, phoneNumber) {
         this.name = name;
