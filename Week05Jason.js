@@ -63,7 +63,7 @@ class Menu {
         4) Display all of your food selection
         `);
     }
-    showFoodMenuOptions() {
+    showFoodMenuOptions(foodInfo) {
         return prompt(`
         1) White Rice
         2) Plain Fried Rice
@@ -72,6 +72,7 @@ class Menu {
         5) Beef Fried Rice
         6) Kung Pao Chicken
         7) General Tso Chicken
+        ${foodInfo}
         `);
     }
     displayAllYourFoodSelection() {
