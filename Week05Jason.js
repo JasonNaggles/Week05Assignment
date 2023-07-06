@@ -83,35 +83,16 @@ class Menu {
         let name = prompt('Enter name for new food:');
         this.food.push(new Food(name));
     }
-    viewFood() {
-        let index = prompt('Enter the index of the food you wish to view:');
-        if (index > -1 && index < this.food.length) {
-            this.selectedFood = this.food[index];
-            let description = 'Food Name: ' + this.selectedFood.name + '\n';
 
-            for (let i = 0; i < this.selectedFood.customers.length; i++) {
-                description += i + ') ' + this.selectedFood.customers[i].name + ' - ' + this.selectedFood.customers[i].phoneNumber + '\n';
-            }
-            let selection = this.showCustomersMenuOptions(description);
-            switch (selection) {
-                case '1':
-                this.createCustomer();
-                break;
-                case '2':
-                this.deleteCustomer();
-            }
-        }
-    
-    }
-    deleteFood() {
+ }
+        
+    deleteFood() 
         let index = prompt('Enter the index of the food you wish to delete:');
         if (index > -1 && index < this.selectedFood.length) {
             this.selectedFood.splice(index, 1);
         }
-    }
     
- }
-    
+
 
 
 let menu = new Menu();
