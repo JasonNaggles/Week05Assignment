@@ -82,18 +82,15 @@ class Menu {
     createFood() {
         let name = prompt('Enter name for new food:');
         this.food.push(new Food(name));
-    }
-
- }
-        
-    deleteFood() 
+    }    
+    deleteFood() {
         let index = prompt('Enter the index of the food you wish to delete:');
         if (index > -1 && index < this.selectedFood.length) {
             this.selectedFood.splice(index, 1);
         }
-    
+     
+    } 
 
-
-
+}
 let menu = new Menu();
 menu.start();
