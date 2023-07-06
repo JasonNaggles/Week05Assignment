@@ -9,7 +9,7 @@ class Customer {
 }
 
 class Food {
-    constructor(name) {
+    constructor(name, _customers) {
         this.name = name;
         this.customers = [];
     }
@@ -26,7 +26,7 @@ class Food {
 }
 
 class Menu {
-    constructor() {
+    constructor(_food, _selectedFood) {
         this.food = [];
         this.selectedFood = null;
     }
