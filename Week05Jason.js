@@ -26,7 +26,7 @@ class Food {
 }
 
 class Menu {
-    constructor() {
+    constructor(food) {
         this.food = [];
         this.selectedFood = null;
     }
