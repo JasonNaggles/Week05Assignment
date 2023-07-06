@@ -40,12 +40,9 @@ class Menu {
             this.createFood();
             break;
             case '2':
-            this.viewFood();
-            break;
-            case '3':
             this.deleteFood();
             break;
-            case '4':
+            case '3':
             this.displayAllYourFoodSelection();
             break;
             default:
@@ -59,9 +56,8 @@ class Menu {
         return prompt(`
         0) Exit
         1) Select new food
-        2) View your food selection
-        3) Remove your food selection
-        4) Display all of your food selection
+        2) Remove your food selection
+        3) Display all of your food selection
         `);
     }
     showFoodMenuOptions(foodInfo) {
