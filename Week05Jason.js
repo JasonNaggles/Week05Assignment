@@ -9,7 +9,7 @@ class Customer {
 }
 
 class Food {
-    constructor(name, _customers) {
+    constructor(name) {
         this.name = name;
         this.customers = [];
     }
@@ -26,7 +26,7 @@ class Food {
 }
 
 class Menu {
-    constructor(_food, _selectedFood) {
+    constructor() {
         this.food = [];
         this.selectedFood = null;
         
@@ -37,16 +37,16 @@ class Menu {
         while (selection != 0) {
         switch (selection) {
             case '1':
-            this.createFood;
+            this.createFood();
             break;
             case '2':
-            this.viewFood;
+            this.viewFood();
             break;
             case '3':
-            this.deleteFood;
+            this.deleteFood();
             break;
             case '4':
-            this.displayFood;
+            this.displayAllYourFoodSelection();
             break;
             default:
                 selection = 0; 
@@ -107,19 +107,16 @@ class Menu {
         }
     
     }
-    createCustomer() {
-        let name = prompt('Enter name for new customer:');
-        let phoneNumber = prompt('Enter telephone number of new customer:');
-        this.selectedFood.customers.push(new Customer(name, phoneNumber));
-
-    }
-    deleteCustomer() {
-        let index = prompt('Enter the index of the customer that you want to delete:');
-        if (index > -1 && index < this.selectedFood.customers.length) {
-            this.selectedFood.customers.splice(index, 1);
+    deleteFood() {
+        let index = prompt('Enter the index of the food you wish to delete:');
+        if (index > -1 && index < this.selectedFood.length) {
+            this.selectedFood.splice(index, 1);
         }
     }
-}
+    
+ }
+    
+
 
 let menu = new Menu();
 menu.start();
