@@ -18,7 +18,7 @@ class Food {
 class Menu {
     constructor() {
         this.food = [];
-        this.selectedFood = null;
+        this.selectedFood = null; //Manages one food at a time
         
     }
 
@@ -30,9 +30,12 @@ class Menu {
             this.createFood();
             break;
             case '2':
-            this.deleteFood();
+            this.viewFood();
             break;
             case '3':
+            this.deleteFood();
+            break;
+            case '4':
             this.displayAllYourFoodSelection();
             break;
             default:
@@ -46,8 +49,9 @@ class Menu {
         return prompt(`
         0) Exit
         1) Select new food
-        2) Remove your food selection
-        3) Display all of your food selection
+        2) View your food selection
+        3) Remove your food selection
+        4) Display all of your food selection
         `);
     }
     showFoodMenuOptions(foodInfo) {
@@ -72,15 +76,39 @@ class Menu {
     createFood() {
         let name = prompt('Enter name for new food:');
         this.food.push(new Food(name));
-    }    
+    }
+    viewFood() {
+        this.rl.question('Enter the index of the food you wish to view: ', (index) => {
+          index = parseInt(index);
+          if (index > -1 && index < this.food.length) {
+            this.selectedFood = this.food[index];
+            let description = 'Food Name: ' + this.selectedFood.name + '\n';
+    
+            for (let i = 0; i < this.selectedFood.customers.length; i++) {
+              description += i + ') ' + this.selectedFood.customers[i].name + ' - ' + this.selectedFood.customers[i].phoneNumber + '\n';
+            }
+    
+            console.log(description);
+            // Continue with menu options for viewing food
+          } else {
+            console.log('Invalid index');
+            this.showMeMenuOptions();
+          }
+        });
+    }   
     deleteFood() {
-        let index = prompt('Enter the index of the food you wish to delete:');
-        if (index > -1 && index < this.selectedFood.length) {
-            this.selectedFood.splice(index, 1);
-         }
-     
-    } 
+        this.rl.question('Enter the index of the food you want to delete: ', (index) => {
+          index = parseInt(index);
+          if (index > -1 && index < this.food.length) {
+            this.food.splice(index, 1);
+            this.showMeMenuOptions();
+          } else {
+            console.log('Invalid index');
+            this.showMeMenuOptions();
+          }
+        });
 
+}
 }
 let menu = new Menu();
 menu.start();
