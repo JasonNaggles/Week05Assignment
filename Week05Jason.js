@@ -81,6 +81,7 @@ class Menu {
             let selection = this.showFoodMenuOptions(description);
             switch(selcetion) {
                 case '1':
+                this.createNewFood();
                 
             }
         }
