@@ -84,7 +84,7 @@ class Menu {
         }
     }   
     deleteFood() {
-        let index = prompt('Enter the index of the food you wish to delete:');
+        let index = prompt('Enter the index of the food you wish to delete: ');
         if (index > -1 && index < this.selectedFood.length) {
             this.selectedFood.splice(index, 1);
          }
