@@ -31,7 +31,7 @@ class Menu {
             break;
             case '2':
             this.viewFood();
-            break;
+            break
             case '3':
             this.deleteFood();
             break;
@@ -78,37 +78,19 @@ class Menu {
         this.food.push(new Food(name));
     }
     viewFood() {
-        this.rl.question('Enter the index of the food you wish to view: ', (index) => {
-          index = parseInt(index);
+        let index = ('Enter the index of the food you wish to view: '); 
           if (index > -1 && index < this.food.length) {
-            this.selectedFood = this.food[index];
-            let description = 'Food Name: ' + this.selectedFood.name + '\n';
-    
-            for (let i = 0; i < this.selectedFood.customers.length; i++) {
-              description += i + ') ' + this.selectedFood.customers[i].name + ' - ' + this.selectedFood.customers[i].phoneNumber + '\n';
-            }
-    
-            console.log(description);
-            // Continue with menu options for viewing food
-          } else {
-            console.log('Invalid index');
-            this.showMeMenuOptions();
-          }
-        });
+            
+        }
     }   
     deleteFood() {
-        this.rl.question('Enter the index of the food you want to delete: ', (index) => {
-          index = parseInt(index);
-          if (index > -1 && index < this.food.length) {
-            this.food.splice(index, 1);
-            this.showMeMenuOptions();
-          } else {
-            console.log('Invalid index');
-            this.showMeMenuOptions();
-          }
-        });
+        let index = prompt('Enter the index of the food you wish to delete:');
+        if (index > -1 && index < this.selectedFood.length) {
+            this.selectedFood.splice(index, 1);
+         }
+     
+    } 
 
-}
 }
 let menu = new Menu();
 menu.start();
