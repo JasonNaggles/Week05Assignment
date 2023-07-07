@@ -31,7 +31,7 @@ class Menu {
             break;
             case '2':
             this.viewFood();
-            break
+            break;
             case '3':
             this.deleteFood();
             break;
@@ -81,6 +81,7 @@ class Menu {
         let index = ('Enter the index of the food you wish to view: '); 
           if (index > -1 && index < this.food.length) {
             this.selectedFood = this.food.length[index];
+            let description = 'Food Name: ' + this.selectedFood.name + '\n';
         }
     }   
     deleteFood() {
