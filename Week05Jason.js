@@ -80,7 +80,7 @@ class Menu {
     viewFood() {
         let index = ('Enter the index of the food you wish to view: '); 
           if (index > -1 && index < this.food.length) {
-            
+            this.selectedFood = this.food.length[index];
         }
     }   
     deleteFood() {
