@@ -75,15 +75,8 @@ class Menu {
             this.selectedFood = this.food.length[index];
             let description = 'Food Name: ' + this.selectedFood.name + '\n';
 
-            for (let i = 0; i < this.selectedFood.food.length; i++) {
-                description += i + ') ' + this.selectedFood.food[i].name + '\n';
-            }
-            let selection = this.showFoodMenuOptions(description);
-            switch(selcetion) {
-                case '1':
-                this.createNewFood();
-                
-            }
+            
+            
         }
     }   
     deleteFood() {
