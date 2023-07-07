@@ -17,7 +17,7 @@ class Food {
 
 class Menu {
     constructor() {
-        this.food = [];
+        this.food = ['White Rice, Plain Fried Rice, Shrimp Fried Rice, Pork Fried Rice, Beef Fried Rice, Kung Pro Chicken, General Tso Chicken'];
         this.selectedFood = null;
         
     }
@@ -78,7 +78,7 @@ class Menu {
         if (index > -1 && index < this.selectedFood.length) {
             this.selectedFood.splice(index, 1);
          } else { 
-            return menu.start();
+            return menu;
         }
      
     } 
