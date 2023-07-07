@@ -74,7 +74,7 @@ class Menu {
         alert(foodString);
     }
     createFood() {
-        let name = prompt('Enter name for new food:');
+        let name = prompt('Enter name for new food: ');
         this.food.push(new Food(name));
     }
     viewFood() {
