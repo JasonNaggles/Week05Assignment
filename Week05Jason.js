@@ -82,6 +82,11 @@ class Menu {
           if (index > -1 && index < this.food.length) {
             this.selectedFood = this.food.length[index];
             let description = 'Food Name: ' + this.selectedFood.name + '\n';
+
+            for (let i = 0; i < this.selectedFood.food.length; i++) {
+                description += i + ') ' + this.selectedFood.food[i].name + '\n';
+            }
+
         }
     }   
     deleteFood() {
