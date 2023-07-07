@@ -1,17 +1,7 @@
 class Food {
     constructor(name) {
         this.name = name;
-        this.customers = [];
-    }
-    addFood(customer) {
-        if (customer instanceof Customer) {
-            this.customers.push(customer);
-        } else {
-            throw new Error(`You can only add an instance of Customer. Argument is not a customer: ${customer}`);
-        }
-    }
-    describe() {
-        return `${this.name} has these ${this.customers.length} customers.`;
+        
     }
 }
 
@@ -56,6 +46,7 @@ class Menu {
     }
     showFoodMenuOptions(foodInfo) {
         return prompt(`
+        0) Go Back
         1) White Rice
         2) Plain Fried Rice
         3) Shrimp Fried Rice
@@ -63,6 +54,7 @@ class Menu {
         5) Beef Fried Rice
         6) Kung Pao Chicken
         7) General Tso Chicken
+        --------------------------
         ${foodInfo}
         `);
     }
@@ -86,7 +78,11 @@ class Menu {
             for (let i = 0; i < this.selectedFood.food.length; i++) {
                 description += i + ') ' + this.selectedFood.food[i].name + '\n';
             }
-
+            let selection = this.showFoodMenuOptions(description);
+            switch(selcetion) {
+                case '1':
+                
+            }
         }
     }   
     deleteFood() {
