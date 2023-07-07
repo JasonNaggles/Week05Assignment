@@ -17,7 +17,7 @@ class Food {
 
 class Menu {
     constructor() {
-        this.food = ['White Rice, Plain Fried Rice, Shrimp Fried Rice, Pork Fried Rice, Beef Fried Rice, Kung Pro Chicken, General Tso Chicken'];
+        this.food = [];
         this.selectedFood = null;
         
     }
