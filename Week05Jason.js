@@ -85,24 +85,53 @@ class Menu {
                 `);
             }
             displayAllYourFoodSelection() {
-                let foodString = '';
+                let foodString = "";
                 for (let i = 0; i < this.food.length; i++) {
-                    foodString += i + ') ' + this.food[i].name + '\n';
+                    foodString += i + ') ' + this.food[i].foodName + '\n';
                 }
                 alert(foodString);
             }
             createFood() {
-                let name = prompt('Enter name for new food: ');
-                this.food.push(new Food(name));
+                let foodName = prompt('Enter name for new food: ');
+                this.food.push(new Food(foodName));
             }
             viewFood() {
                 let index = ('Enter the index of the food you wish to view: '); 
                   if (index > -1 && index < this.food.length) {
                     this.selectedFood = this.food.length[index];
-                    let description = 'Food Name: ' + this.selectedFood.name + '\n';
+                    let description = 'Food Name: ' + this.selectedFood.foodName + '\n';
+                    description += " " + this.selectedFood.describe() + "\n";
+
+                    for (let i = 0; i < this.selectedFood.foodOnMenu.length; i++) {
+                        description += i + ") " + this.selectedFood.foodOnMenu[i].decrsibe();
+                    }
         
-                    
-                    
+                    let selection = this.showFoodMenu(description);
+                    switch (selection) {
+                        case "1":
+                        this.goBack();
+                        break;
+                        case "2":
+                        this.whiteRice();
+                        break;
+                        case "3":
+                        this.plainFriedRice();
+                        break;
+                        case "4":
+                        this.shrimpFriedRice();
+                        break;
+                        case "5":
+                        this.porkFriedRice();
+                        break;
+                        case "6":
+                        this.beefFriedRice();
+                        break;
+                        case "7":
+                        this.kungPaoChicken();
+                        break;
+                        case "8":
+                        this.generalTsoChicken();
+                    }   
                 }
             }   
             deleteFood() {
