@@ -1,12 +1,12 @@
 class Food {
     constructor(foodName, foodPrice) {
         this.foodName = foodName; // food name
-        this.foodPrice = foodPrice; //price of each food item
+        
         
     }
 
     describe() {
-        return ` ${this.foodName} is ${this.foodPrice} \n`; 
+        return ` ${this.foodName} \n`; 
     }
 
 }
