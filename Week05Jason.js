@@ -118,5 +118,5 @@ class Menu {
         
 }
         
-        let menu = new Menu();
-        menu.start()
+let menu = new Menu();
+menu.start()
