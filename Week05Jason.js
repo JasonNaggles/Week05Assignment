@@ -35,8 +35,8 @@ class Menu {
         this.food = []; //food array
         this.selectedFood = null; 
             }
-}
-            start(); {
+
+            start() {
             let selection = this.showMeMenu();
             while (selection != 0) {
             switch (selection) {
@@ -61,7 +61,7 @@ class Menu {
             }
 
         
-            showMeMenu(); {
+            showMeMenu() {
                 return prompt(`
                 0) Exit
                 1) Select new food
@@ -70,7 +70,7 @@ class Menu {
                 4) Display all of your food selection
                 `);
             }
-            showFoodMenu(foodInfo); {
+            showFoodMenu(foodInfo) {
                 return prompt(`
                 0) Go Back
                 1) White Rice
@@ -84,18 +84,18 @@ class Menu {
                 ${foodInfo}
                 `);
             }
-            displayAllYourFoodSelection(); {
+            displayAllYourFoodSelection() {
                 let foodString = '';
                 for (let i = 0; i < this.food.length; i++) {
                     foodString += i + ') ' + this.food[i].name + '\n';
                 }
                 alert(foodString);
             }
-            createFood(); {
+            createFood() {
                 let name = prompt('Enter name for new food: ');
                 this.food.push(new Food(name));
             }
-            viewFood(); {
+            viewFood() {
                 let index = ('Enter the index of the food you wish to view: '); 
                   if (index > -1 && index < this.food.length) {
                     this.selectedFood = this.food.length[index];
@@ -105,7 +105,7 @@ class Menu {
                     
                 }
             }   
-            deleteFood(); {
+            deleteFood() {
                 let index = prompt('Enter the index of the food you wish to delete: ');
                 if (index > -1 && index < this.selectedFood.length) {
                     this.selectedFood.splice(index, 1);
@@ -113,7 +113,7 @@ class Menu {
              
             } 
         
-        
+}
         
         let menu = new Menu();
         menu.start();
