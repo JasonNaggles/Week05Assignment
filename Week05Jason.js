@@ -88,6 +88,7 @@ class Menu {
                     }
         
                     let selection = this.showFoodMenu(description);
+                    while (selection != 0)
                     switch (selection) {
                         case "1":
                         this.goBack();
