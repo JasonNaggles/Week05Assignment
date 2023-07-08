@@ -1,23 +1,18 @@
 class Food {
     constructor(foodName) {
-        this.foodName = foodName; // food name
-        
-        
+        this.foodName = foodName; // food name  
     }
-
     describe() {
         return ` ${this.foodName}`; 
     }
 
 }
-    
-
 class Menu {
     constructor() { 
         this.food = []; //food array
         this.selectedFood = null; 
             }
-
+            
             start() {
             let selection = this.showMeMenu();
             while (selection != 0) {
