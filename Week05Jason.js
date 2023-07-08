@@ -1,21 +1,3 @@
-class Customer {
-    constructor(customerName) {
-        this.customerName = customerName; // customer name
-        this.customersOnMenu = []; // array of customers on menu
-    }
-
-    addCustomer(customer) {
-        if(customer instanceof Customer) { //verify if the customer is a valid instance of the Customer class
-            this.customersOnMenu.push(customer); // add a customer to the the array
-        } else {
-            throw new Error(`This information is not an instance of Customer ${this.customer}`) // show error to the user
-        }
-    }
-    decrsibe() {
-        return ` ${this.customerName} has ${this.customersOnMenu.length} customers`; // this method provides the Customer description
-    }
-}
-
 class Food {
     constructor(foodName, foodPrice) {
         this.foodName = foodName; // food name
@@ -70,7 +52,7 @@ class Menu {
                 4) Display all of your food selection
                 `);
             }
-            showFoodMenu(foodInfo) {
+            showFoodMenu() {
                 return prompt(`
                 0) Go Back
                 1) White Rice
@@ -81,7 +63,6 @@ class Menu {
                 6) Kung Pao Chicken
                 7) General Tso Chicken
                 --------------------------
-                ${foodInfo}
                 `);
             }
             displayAllYourFoodSelection() {
@@ -96,14 +77,14 @@ class Menu {
                 this.food.push(new Food(foodName));
             }
             viewFood() {
-                let index = ('Enter the index of the food you wish to view: '); 
+                let index = prompt('Enter the index of the food you wish to view: '); 
                   if (index > -1 && index < this.food.length) {
-                    this.selectedFood = this.food.length[index];
+                    this.selectedFood = this.food[index];
                     let description = 'Food Name: ' + this.selectedFood.foodName + '\n';
                     description += " " + this.selectedFood.describe() + "\n";
 
                     for (let i = 0; i < this.selectedFood.foodOnMenu.length; i++) {
-                        description += i + ") " + this.selectedFood.foodOnMenu[i].decrsibe();
+                        description += i + ") " + this.food[i].describe();
                     }
         
                     let selection = this.showFoodMenu(description);
@@ -136,8 +117,8 @@ class Menu {
             }   
             deleteFood() {
                 let index = prompt('Enter the index of the food you wish to delete: ');
-                if (index > -1 && index < this.selectedFood.length) {
-                    this.selectedFood.splice(index, 1);
+                if (index > -1 && index < this.food.length) {
+                    this.food.splice(index, 1);
                  }
              
             } 
@@ -145,4 +126,4 @@ class Menu {
 }
         
         let menu = new Menu();
-        menu.start();
+        menu.start()
