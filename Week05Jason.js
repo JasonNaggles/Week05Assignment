@@ -6,7 +6,7 @@ class Food {
     }
 
     describe() {
-        return ` ${this.foodName} \n`; 
+        return ` ${this.foodName}`; 
     }
 
 }
@@ -83,35 +83,28 @@ class Menu {
                     let description = 'Food Name: ' + this.selectedFood.foodName + '\n';
                     description += " " + this.selectedFood.describe() + "\n";
 
-                    for (let i = 0; i < this.selectedFood.foodOnMenu.length; i++) {
+                    for (let i = 0; i < this.food.length; i++) {
                         description += i + ") " + this.food[i].describe();
                     }
         
                     let selection = this.showFoodMenu(description);
                     switch (selection) {
                         case "1":
-                        this.goBack();
                         break;
                         case "2":
-                        this.whiteRice();
                         break;
                         case "3":
-                        this.plainFriedRice();
                         break;
                         case "4":
-                        this.shrimpFriedRice();
                         break;
                         case "5":
-                        this.porkFriedRice();
                         break;
                         case "6":
-                        this.beefFriedRice();
                         break;
                         case "7":
-                        this.kungPaoChicken();
                         break;
                         case "8":
-                        this.generalTsoChicken();
+                        
                     }   
                 }
             }   
