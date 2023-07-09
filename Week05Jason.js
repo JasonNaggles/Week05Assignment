@@ -105,14 +105,14 @@ class Menu {
                 }
             }   
             deleteFood() {
-                let index = prompt('Enter the index of the food you wish to delete: ');
-                if (index > -1 && index < this.food.length) {
-                    this.food.splice(index, 1);
+                let index = prompt('Enter the index of the food you wish to delete: '); // set index to equal to what user prompted
+                if (index > -1 && index < this.food.length) { // make sure the number entered is a valid selection
+                    this.food.splice(index, 1); // using the food array method, remove or splice one element
                  }
              
             } 
         
 }
         
-let menu = new Menu();
-menu.start()
+let menu = new Menu(); // create an instance of the menu class
+menu.start(); // execute the menu object's start method defined in the menu class
