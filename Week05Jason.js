@@ -79,7 +79,6 @@ class Menu {
                     description += " " + this.selectedFood.describe() + "\n"; // adds each food to the description and a line break afterwards
 
                     //build list of selected foods
-                    
                     for (let i = 0; i < this.food.length; i++) { // loop for the length of the food array
                         description += i + ") " + this.food[i].describe(); // continues to add to the description of the food array
                     }
