@@ -80,8 +80,10 @@ class Menu {
 
                     //build list of selected foods
                     for (let i = 0; i < this.food.length; i++) { // loop for the length of the food array
+                    if (this.food[i].foodName === '') {
                         description += i + ") " + this.food[i].describe(); // continues to add to the description of the food array
                     }
+                }
                     
 
                     let selection = this.showFoodMenu(description); // the selection is the index from the food prompted
