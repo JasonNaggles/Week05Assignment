@@ -1,3 +1,5 @@
+// Chinese Food Menu App
+
 class Food {
     constructor(foodName) {
         this.foodName = foodName; // food name  
