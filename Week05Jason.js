@@ -79,10 +79,12 @@ class Menu {
                     description += " " + this.selectedFood.describe() + "\n"; // adds each food to the description and a line break afterwards
 
                     //build list of selected foods
+                    let foodString = '';
                     for (let i = 0; i < this.food.length; i++) { // loop for the length of the food array
                         description += i + ") " + this.food[i].describe(); // continues to add to the description of the food array
                     }
-        
+                    alert(foodString);
+                    
                     let selection = this.showFoodMenu(description); // the selection is the index from the food prompted
                     switch (selection) {
                         case "1":
