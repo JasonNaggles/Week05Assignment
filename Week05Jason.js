@@ -103,7 +103,8 @@ class Menu {
                         case "7":
                         break;
                         case "8":
-                        
+                        default:
+                        break;
                     }   
                 }
             }   
